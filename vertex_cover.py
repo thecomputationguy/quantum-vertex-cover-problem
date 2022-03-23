@@ -1,5 +1,6 @@
 import numpy as np
 from collections import defaultdict
+import time
 
 class VertexCover:
     def __init__(self, graph_adjacency_matrix : np.ndarray):
@@ -24,6 +25,7 @@ class VertexCover:
 
     def get_vertex_cover(self) -> tuple:
         covering_vertices = [False] * self.num_vertices
+        start = time.time() * 1e6
         for u in range(self.num_vertices):
             if not covering_vertices[u]:
                 for v in self.graph[u]:
@@ -31,4 +33,5 @@ class VertexCover:
                         covering_vertices[v] = True
                         covering_vertices[u] = True
                         break
-        return (covering_vertices.count(True), np.where(covering_vertices)[0])
+        end = time.time() * 1e6
+        return (covering_vertices.count(True), np.where(covering_vertices)[0], (end - start))
