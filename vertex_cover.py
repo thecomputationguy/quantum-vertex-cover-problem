@@ -3,7 +3,16 @@ from collections import defaultdict
 import time
 
 class VertexCover:
+    """Class to determine the vertex cover from the adjacency matrix of a graph.
+    """    
     def __init__(self, graph_adjacency_matrix : np.ndarray):
+        """Generate a dictionary of nodes and their edges from an adjacency matrix.
+
+        Parameters
+        ----------
+        graph_adjacency_matrix : np.ndarray
+            Adjacency matrix of the grpah.
+        """        
         self.adjacency = graph_adjacency_matrix
         try:
             assert np.allclose(self.adjacency, self.adjacency.T)
@@ -24,6 +33,13 @@ class VertexCover:
         return graph_dict
 
     def get_vertex_cover(self) -> tuple:
+        """Get the vertex cover using the algorithm from CLRS, Section 35.1
+
+        Returns
+        -------
+        tuple
+            Vertex Cover size, Nodes in the cover, Approximate time-of-run
+        """        
         covering_vertices = [False] * self.num_vertices
         start = time.time() * 1e6
         for u in range(self.num_vertices):
