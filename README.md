@@ -1,6 +1,6 @@
 # vertex-cover-problem
 
-Python based code for finding optimal solutions of the (NP-Complete) Vertex-Cover problem and mapping it to a Quantum Annealer.
+Python based code for finding approximately optimal solutions of the Vertex-Cover problem using both classical and quantum approaches. To run the quantum code on D-Wave's systems, a developer API is required that one can obtain by signing up for a trial account.
 
 1. Install the requirements from the requirements.txt file.
 
