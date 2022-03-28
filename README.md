@@ -6,4 +6,6 @@ Python based code for finding approximately optimal solutions of the Vertex-Cove
 
 2. In the notebook, use your API token from D-Wave in the field where the token is set.
 
-3. Set solver_location = 1, if you want to run the simulations locally on your computer, or set it to 1 if you want to run it on D-Wave's systems. 
+3. Set solver_location = 1, if you want to run the simulations locally on your computer, or set it to 1 if you want to run it on D-Wave's systems.
+
+4. To see details on how the solutions are formulated, consult the file 'Minimum_Vertex_Cover.pdf'.
